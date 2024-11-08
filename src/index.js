@@ -14,10 +14,16 @@ const client = new Client({
   ],
 });
 
-// Inicializar DisTube con el plugin YtDlpPlugin
+// Inicializar DisTube con el plugin YtDlpPlugin, usando el archivo de cookies
 client.distube = new DisTube(client, {
   emitNewSongOnly: true,
-  plugins: [new YtDlpPlugin()]
+  plugins: [
+    new YtDlpPlugin({
+      requestOptions: {
+        cookies: './cookies.txt'  // Ruta al archivo de cookies
+      }
+    })
+  ]
 });
 
 // Pasar correctamente la instancia de DisTube a distube.js
