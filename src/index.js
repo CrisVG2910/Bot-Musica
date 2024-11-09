@@ -23,7 +23,8 @@ client.distube = new DisTube(client, {
         cookies: './cookies.txt'  // Ruta al archivo de cookies
       }
     })
-  ]
+  ],
+  ffmpeg: "/usr/local/bin/ffmpeg"
 });
 
 // Pasar correctamente la instancia de DisTube a distube.js
