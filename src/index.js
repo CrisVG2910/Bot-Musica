@@ -4,6 +4,7 @@ const path = require('node:path');
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const { DisTube } = require('distube');
 const { YtDlpPlugin } = require('@distube/yt-dlp');
+const { ffmpegPath } = require('@ffmpeg-installer/ffmpeg').path; 
 
 const client = new Client({
   intents: [
@@ -24,7 +25,7 @@ client.distube = new DisTube(client, {
       }
     })
   ],
-  ffmpeg: "/usr/local/bin/ffmpeg"
+  ffmpeg: ffmpegPath
 });
 
 // Pasar correctamente la instancia de DisTube a distube.js
